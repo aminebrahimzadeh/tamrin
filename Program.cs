@@ -4,36 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication3
+namespace ConsoleApplication2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            if (a>b)
-            {
-                int c = b;
-                b = a;
-                a = c;
-            }
-            for (int i = a+1; i <b; i++)
-            {
-                int sum = 0;
-                for (int j = 2; j < i; j++)
+            int[] numbers = new int[5];
+            int a = 1000;
+            int b = 0;
+                
+            double d = 0;
+            while (b < 5)
+            { int sum = 0;
+                for (int i = 2; i < a; i++)
                 {
-                    if (i%j==0)
+
+
+                    if (a%i==0)
                     {
-                        sum += 1;
+                        sum += i;
                     }
+
                 }
                 if (sum==0)
                 {
-                    Console.WriteLine(i);
-                }
+                    numbers[b] = a;
+                   
+                    b++;
+                }a++;
+                    
+                    
+
+
             }
+            for (int i = 0; i < 5; i++)
+            {
+                d += numbers[i];
+            }
+            Console.WriteLine(d / 5);
             Console.ReadKey();
+                
         }
     }
 }
